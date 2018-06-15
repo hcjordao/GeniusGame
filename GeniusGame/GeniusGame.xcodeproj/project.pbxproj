@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C3F20D4307400F4C918 /* GradientView.swift */; };
+		AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C4120D43D1900F4C918 /* Genius.swift */; };
 		AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFBD2920D30E5D000620D3 /* AppDelegate.swift */; };
 		AFFFBD2C20D30E5D000620D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFBD2B20D30E5D000620D3 /* ViewController.swift */; };
 		AFFFBD2F20D30E5D000620D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFFBD2D20D30E5D000620D3 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AFEC7C3F20D4307400F4C918 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		AFEC7C4120D43D1900F4C918 /* Genius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genius.swift; sourceTree = "<group>"; };
 		AFFFBD2620D30E5D000620D3 /* GeniusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeniusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFFBD2920D30E5D000620D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFFFBD2B20D30E5D000620D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFEC7C3B20D3218A00F4C918 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AFFFBD2D20D30E5D000620D3 /* Main.storyboard */,
+				AFFFBD3020D30E5F000620D3 /* Assets.xcassets */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		AFFFBD1D20D30E5D000620D3 = {
 			isa = PBXGroup;
 			children = (
@@ -54,10 +67,11 @@
 		AFFFBD2820D30E5D000620D3 /* GeniusGame */ = {
 			isa = PBXGroup;
 			children = (
+				AFEC7C3F20D4307400F4C918 /* GradientView.swift */,
 				AFFFBD2B20D30E5D000620D3 /* ViewController.swift */,
-				AFFFBD2D20D30E5D000620D3 /* Main.storyboard */,
-				AFFFBD3020D30E5F000620D3 /* Assets.xcassets */,
+				AFEC7C3B20D3218A00F4C918 /* UI */,
 				AFFFBD3B20D30E6E000620D3 /* Supporting Files */,
+				AFEC7C4120D43D1900F4C918 /* Genius.swift */,
 			);
 			path = GeniusGame;
 			sourceTree = "<group>";
@@ -144,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFFFBD2C20D30E5D000620D3 /* ViewController.swift in Sources */,
+				AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */,
+				AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */,
 				AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
