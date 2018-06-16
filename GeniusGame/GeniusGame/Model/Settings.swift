@@ -11,10 +11,10 @@ import Foundation
 struct Settings {
     var volume: Int
     var difficulty: Difficulty
-    var soundEffectPack: [Int]
+    var soundEffectPack: [String]
     var isMuted: Bool
     
     static func `default`() -> Settings{
-        return Settings(volume: 1, difficulty: .easy, soundEffectPack: [], isMuted: false)
+        return Settings(volume: 1, difficulty: .easy, soundEffectPack: SoundEffectPacks.packOne, isMuted: false)
     }
 }

@@ -45,10 +45,12 @@ class Genius {
     var playerProgress: Int = 0
     var score: Float
     var difficulty: Difficulty
+    var soundEffects: [String]
     
     init(difficulty: Difficulty){
         self.state = .showSequence
         self.difficulty = difficulty
+        self.soundEffects = []
         self.score = 0
     }
     
@@ -90,6 +92,10 @@ class Genius {
     
     func changeDifficulty(with difficulty: Difficulty){
         self.difficulty = difficulty
+    }
+    
+    func loadSongs(with pack:[String]){
+        soundEffects = pack
     }
     
     func gameEnd(){

@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
 
     var genius: Genius!
     var userSettings: Settings!
+    var soundPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +43,15 @@ class GameViewController: UIViewController {
             if genius.state == .showSequence {
                 //Increment score label
                 displayScore()
+                playSound(of: index)
                 //Extending pattern UI update
-                showSequence()
+                self.showSequence()
             }else if genius.state == .end {
                 //Finish the game UI Updates
                 displayScore()
             } else {
                 //Keep playing the game.
-                //playSound
+                playSound(of: index)
             }
         }
     }
@@ -63,7 +65,7 @@ class GameViewController: UIViewController {
     
     func applyUserSettings(){
         genius.changeDifficulty(with: userSettings.difficulty)
-        //Load songs to genius.
+        genius.loadSongs(with: userSettings.soundEffectPack)
     }
     
     func displayScore(){
@@ -78,8 +80,23 @@ class GameViewController: UIViewController {
         }
     }
     
-    func playSound(){
+    func playSound(of index: Int){
+        let soundName = genius.soundEffects[index]
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
         
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+    
+            soundPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let soundPlayer = soundPlayer else { return }
+            
+            soundPlayer.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     func highlightNextButton(){
@@ -95,9 +112,11 @@ class GameViewController: UIViewController {
     }
     
     func dimNextButton(_: Bool) -> Void{
+        let index = genius.sequence[genius.sequenceCount]
         let button = geniusButtons[genius.sequence[genius.sequenceCount]]
         let difficultyTimer = genius.difficulty.rawValue
         DispatchQueue.main.async {
+            self.playSound(of: index)
             UIView.transition(with: button,
                               duration: difficultyTimer,
                               options: .transitionCrossDissolve,

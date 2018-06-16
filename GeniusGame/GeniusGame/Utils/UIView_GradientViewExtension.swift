@@ -16,5 +16,4 @@ extension UIView {
         gradientView.secondColor = color1
         self.insertSubview(gradientView, at: 0)
     }
-    
 }
