@@ -9,7 +9,7 @@
 import Foundation
 
 struct Settings {
-    var volume: Int
+    var volume: Float
     var difficulty: Difficulty
     var soundEffectPack: [String]
     var isMuted: Bool

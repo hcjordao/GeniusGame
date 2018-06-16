@@ -82,6 +82,7 @@ class GameViewController: UIViewController {
     
     func playSound(of index: Int){
         let soundName = genius.soundEffects[index]
+        let volume = userSettings.volume
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
         
         do {
@@ -91,7 +92,7 @@ class GameViewController: UIViewController {
             soundPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
             guard let soundPlayer = soundPlayer else { return }
-            
+            soundPlayer.volume = volume
             soundPlayer.play()
             
         } catch let error {
