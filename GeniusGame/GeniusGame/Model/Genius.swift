@@ -9,11 +9,11 @@
 import Foundation
 
 enum Difficulty: TimeInterval{
-    case easy = 0.8
-    case medium = 0.6
-    case hard = 0.4
-    case extreme = 0.3
-    case insane = 0.2
+    case easy = 0.5
+    case medium = 0.4
+    case hard = 0.3
+    case extreme = 0.2
+    case insane = 0.1
     
     func difficultyMultiplier() -> Float {
         var multiplier: Float = 0

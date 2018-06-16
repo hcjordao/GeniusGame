@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GameViewController.swift
 //  GeniusGame
 //
 //  Created by Henrique Jordão on 14/06/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     
     //Properties
     @IBOutlet weak var scoreLbl: UILabel!
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let tap = UITapGestureRecognizer()
         tap.numberOfTapsRequired = 1
         tap.numberOfTouchesRequired = 1
-        tap.addTarget(self, action: #selector(ViewController.startGame))
+        tap.addTarget(self, action: #selector(GameViewController.startGame))
         view1.addGestureRecognizer(tap)
     }
     
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     @objc func startGame() {
-        self.genius = Genius(difficulty: .easy)
+        self.genius = Genius(difficulty: .insane)
         genius.extendSequence()
         showSequence()
     }
@@ -72,9 +72,10 @@ class ViewController: UIViewController {
     
     func highlightNextButton(){
         let button = geniusButtons[genius.sequence[genius.sequenceCount]]
+        let difficultyTimer = genius.difficulty.rawValue
         DispatchQueue.main.async {
             UIView.transition(with: button,
-                              duration: 0.5,
+                              duration: difficultyTimer,
                               options: .transitionCrossDissolve,
                               animations: { button.isHighlighted = true },
                               completion: self.dimNextButton)
@@ -83,9 +84,10 @@ class ViewController: UIViewController {
     
     func dimNextButton(_: Bool) -> Void{
         let button = geniusButtons[genius.sequence[genius.sequenceCount]]
+        let difficultyTimer = genius.difficulty.rawValue
         DispatchQueue.main.async {
             UIView.transition(with: button,
-                              duration: 0.5,
+                              duration: difficultyTimer,
                               options: .transitionCrossDissolve,
                               animations: { button.isHighlighted = false },
                               completion: self.increaseSequenceCount)
@@ -112,10 +114,7 @@ class ViewController: UIViewController {
         //Adding Gradient View to View
         let color0 = UIColor(red:224.0/255, green:234.0/255, blue:252.0/255, alpha:1)
         let color1 = UIColor(red:207.0/255, green:222.0/255, blue:243.0/255, alpha:1)
-        let gradientView = GradientView(frame: self.view.frame, colors: [color0,color1])
-        gradientView.firstColor = color0
-        gradientView.secondColor = color1
-        self.view.insertSubview(gradientView, at: 0)
+        self.view.createGradient(with: color0, and: color1)
         
         scoreLbl.text = "0"
     }
