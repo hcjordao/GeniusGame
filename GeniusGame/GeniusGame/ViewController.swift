@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     //Properties
+    @IBOutlet weak var scoreLbl: UILabel!
     @IBOutlet var geniusButtons: [UIButton]!
 
     var genius: Genius!
@@ -37,11 +38,13 @@ class ViewController: UIViewController {
         if let index = geniusButtons.index(of: sender){
             genius.checkInput(with: index)
             if genius.state == .showSequence {
+                //Increment score label
+                displayScore()
                 //Extending pattern UI update
-    
                 showSequence()
             }else if genius.state == .end {
                 //Finish the game UI Updates
+                displayScore()
             } else {
                 //Keep playing the game.
                 //playSound
@@ -52,6 +55,11 @@ class ViewController: UIViewController {
     @objc func startGame() {
         self.genius = Genius(difficulty: .easy)
         genius.extendSequence()
+        showSequence()
+    }
+    
+    func displayScore(){
+        scoreLbl.text = "\(Int(genius.score))"
     }
     
     func showSequence(){
@@ -108,6 +116,8 @@ class ViewController: UIViewController {
         gradientView.firstColor = color0
         gradientView.secondColor = color1
         self.view.insertSubview(gradientView, at: 0)
+        
+        scoreLbl.text = "0"
     }
 }
 

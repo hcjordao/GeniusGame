@@ -128,6 +128,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="scoreLbl" destination="pP4-t8-Me8" id="3G6-tF-quO"/>
                         <outletCollection property="geniusButtons" destination="ANu-LL-ccD" collectionClass="NSMutableArray" id="1gl-X4-4bo"/>
                         <outletCollection property="geniusButtons" destination="pmo-6T-t3S" collectionClass="NSMutableArray" id="EO6-cb-UxP"/>
                         <outletCollection property="geniusButtons" destination="pss-ET-q6b" collectionClass="NSMutableArray" id="yC2-Wg-Jy5"/>

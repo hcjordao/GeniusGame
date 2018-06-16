@@ -8,12 +8,33 @@
 
 import Foundation
 
-enum Difficulty{
-    case easy, medium, hard
+enum Difficulty: TimeInterval{
+    case easy = 0.8
+    case medium = 0.6
+    case hard = 0.4
+    case extreme = 0.3
+    case insane = 0.2
+    
+    func difficultyMultiplier() -> Float {
+        var multiplier: Float = 0
+        switch self {
+        case .easy:
+            multiplier = 1
+        case .medium:
+            multiplier = 1.25
+        case .hard:
+            multiplier = 1.5
+        case .extreme:
+            multiplier = 2
+        case .insane:
+            multiplier = 3
+        }
+        return multiplier
+    }
 }
 
 enum GameState{
-    case start,pause,play,showSequence,end
+    case pause,play,showSequence,end
 }
 
 class Genius {
@@ -22,12 +43,14 @@ class Genius {
     var sequence: [Int] = []
     var sequenceCount: Int = 0
     var playerProgress: Int = 0
+    var score: Float
+    var difficulty: Difficulty
   
     
     init(difficulty: Difficulty){
-        state = .start
-//        self.difficulty = difficulty
-//        self.colors = [["On":"btnOneOn","Off":"btnOneOff"],["On":"btnTwoOn","Off":"btnTwoOff"],["On":"btnThreeOn","Off":"btnThreeOff"],["On":"btnFourOn","Off":"btnFourOff"]]
+        self.state = .showSequence
+        self.difficulty = difficulty
+        self.score = 0
     }
     
     func checkInput(with value: Int) {
@@ -35,6 +58,7 @@ class Genius {
             playerProgress += 1
             //Play Sound
             if playerProgress == sequence.count {
+                playerScored()
                 extendSequence()
             }
         } else {
@@ -55,12 +79,18 @@ class Genius {
         state = .showSequence
     }
     
+    func playerScored(){
+        let difficultyMultiplier  = difficulty.difficultyMultiplier()
+        score += (10 * difficultyMultiplier)
+    }
+    
     func readyForInput() {
         playerProgress = 0
         state = .play
     }
     
     func gameEnd(){
+        score = 0
         playerProgress = 0
         print("End")
     }
