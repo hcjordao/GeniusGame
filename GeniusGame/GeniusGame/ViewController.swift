@@ -18,17 +18,86 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        test()
+    }
+    
+    func test() -> Void {
+        let rect = CGRect(x: 50, y: 50, width: 50, height: 50)
+        let view1 = UIView(frame: rect)
+        view1.backgroundColor = UIColor.black
+        self.view.addSubview(view1)
+        let tap = UITapGestureRecognizer()
+        tap.numberOfTapsRequired = 1
+        tap.numberOfTouchesRequired = 1
+        tap.addTarget(self, action: #selector(ViewController.startGame))
+        view1.addGestureRecognizer(tap)
     }
     
     @IBAction func touchButton(_ sender: UIButton){
-        if let index = geniusButtons.index(of: sender) {
-            print(index)
+        if let index = geniusButtons.index(of: sender){
+            genius.checkInput(with: index)
+            if genius.state == .showSequence {
+                //Extending pattern UI update
+    
+                showSequence()
+            }else if genius.state == .end {
+                //Finish the game UI Updates
+            } else {
+                //Keep playing the game.
+                //playSound
+            }
         }
     }
     
-    func startGame() {
+    @objc func startGame() {
         self.genius = Genius(difficulty: .easy)
-        genius.incrementPattern()
+        genius.extendSequence()
+    }
+    
+    func showSequence(){
+        changeButtonInteraction(to: false)
+        genius.sequenceCount = 0
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (_) in
+            self.highlightNextButton()
+        }
+    }
+    
+    func highlightNextButton(){
+        let button = geniusButtons[genius.sequence[genius.sequenceCount]]
+        DispatchQueue.main.async {
+            UIView.transition(with: button,
+                              duration: 0.5,
+                              options: .transitionCrossDissolve,
+                              animations: { button.isHighlighted = true },
+                              completion: self.dimNextButton)
+        }
+    }
+    
+    func dimNextButton(_: Bool) -> Void{
+        let button = geniusButtons[genius.sequence[genius.sequenceCount]]
+        DispatchQueue.main.async {
+            UIView.transition(with: button,
+                              duration: 0.5,
+                              options: .transitionCrossDissolve,
+                              animations: { button.isHighlighted = false },
+                              completion: self.increaseSequenceCount)
+        }
+    }
+    
+    func increaseSequenceCount(_: Bool) -> Void {
+        genius.sequenceCount += 1
+        if genius.sequenceCount < genius.sequence.count {
+            highlightNextButton()
+            return
+        }
+        changeButtonInteraction(to: true)
+        genius.readyForInput()
+    }
+    
+    func changeButtonInteraction(to isEnabled: Bool){
+        for button in geniusButtons {
+            button.isUserInteractionEnabled = isEnabled
+        }
     }
     
     func setupUI(){
@@ -39,7 +108,6 @@ class ViewController: UIViewController {
         gradientView.firstColor = color0
         gradientView.secondColor = color1
         self.view.insertSubview(gradientView, at: 0)
-        
     }
 }
 

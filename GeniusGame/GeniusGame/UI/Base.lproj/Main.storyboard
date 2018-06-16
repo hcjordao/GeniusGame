@@ -65,6 +65,7 @@
                                 <rect key="frame" x="35" y="234" width="143" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnFourOff"/>
+                                <state key="highlighted" image="btnFourOn"/>
                                 <connections>
                                     <action selector="touchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sR3-cR-g4m"/>
                                 </connections>
@@ -73,6 +74,7 @@
                                 <rect key="frame" x="197" y="234" width="143" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnThreeOff"/>
+                                <state key="highlighted" image="btnThreeOn"/>
                                 <connections>
                                     <action selector="touchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FfK-FF-GYk"/>
                                 </connections>
@@ -81,6 +83,7 @@
                                 <rect key="frame" x="197" y="396" width="143" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnTwoOff"/>
+                                <state key="highlighted" image="btnTwoOn"/>
                                 <connections>
                                     <action selector="touchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJb-7M-v9m"/>
                                 </connections>
@@ -89,6 +92,7 @@
                                 <rect key="frame" x="35" y="396" width="143" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnOneOff"/>
+                                <state key="highlighted" image="btnOneOn"/>
                                 <connections>
                                     <action selector="touchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aj0-do-I16"/>
                                 </connections>
@@ -139,8 +143,12 @@
         <image name="InnerCircle" width="110" height="110"/>
         <image name="OutterCircle" width="341" height="341"/>
         <image name="btnFourOff" width="143" height="143"/>
+        <image name="btnFourOn" width="143" height="143"/>
         <image name="btnOneOff" width="143" height="143"/>
+        <image name="btnOneOn" width="143" height="143"/>
         <image name="btnThreeOff" width="143" height="143"/>
+        <image name="btnThreeOn" width="143" height="143"/>
         <image name="btnTwoOff" width="143" height="143"/>
+        <image name="btnTwoOn" width="143" height="143"/>
     </resources>
 </document>

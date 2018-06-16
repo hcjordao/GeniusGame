@@ -44,8 +44,17 @@
 			children = (
 				AFFFBD2D20D30E5D000620D3 /* Main.storyboard */,
 				AFFFBD3020D30E5F000620D3 /* Assets.xcassets */,
+				AFEC7C3F20D4307400F4C918 /* GradientView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		AFEC7C4320D4DB0C00F4C918 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC7C4120D43D1900F4C918 /* Genius.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AFFFBD1D20D30E5D000620D3 = {
@@ -67,11 +76,10 @@
 		AFFFBD2820D30E5D000620D3 /* GeniusGame */ = {
 			isa = PBXGroup;
 			children = (
-				AFEC7C3F20D4307400F4C918 /* GradientView.swift */,
+				AFEC7C4320D4DB0C00F4C918 /* Model */,
 				AFFFBD2B20D30E5D000620D3 /* ViewController.swift */,
 				AFEC7C3B20D3218A00F4C918 /* UI */,
 				AFFFBD3B20D30E6E000620D3 /* Supporting Files */,
-				AFEC7C4120D43D1900F4C918 /* Genius.swift */,
 			);
 			path = GeniusGame;
 			sourceTree = "<group>";
