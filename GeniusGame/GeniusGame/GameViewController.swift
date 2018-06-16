@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet var geniusButtons: [UIButton]!
 
     var genius: Genius!
+    var userSettings: Settings!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +55,15 @@ class GameViewController: UIViewController {
     }
     
     @objc func startGame() {
-        self.genius = Genius(difficulty: .insane)
+        genius = Genius(difficulty: .insane)
+        applyUserSettings()
         genius.extendSequence()
         showSequence()
+    }
+    
+    func applyUserSettings(){
+        genius.changeDifficulty(with: userSettings.difficulty)
+        //Load songs to genius.
     }
     
     func displayScore(){
@@ -68,6 +76,10 @@ class GameViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (_) in
             self.highlightNextButton()
         }
+    }
+    
+    func playSound(){
+        
     }
     
     func highlightNextButton(){

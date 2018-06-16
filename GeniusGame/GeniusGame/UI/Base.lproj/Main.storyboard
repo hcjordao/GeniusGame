@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xul-w4-zhl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="PyP-Tw-tcf">
             <objects>
-                <viewController id="xul-w4-zhl" sceneMemberID="viewController">
+                <viewController id="xul-w4-zhl" customClass="MenuViewController" customModule="GeniusGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fhX-64-Dai">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,20 +34,57 @@
                                 <rect key="frame" x="159" y="499" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="OSe-ah-6zB" kind="showDetail" identifier="settingsSegue" id="GDb-lf-dbn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCh-Qe-Om4">
                                 <rect key="frame" x="164" y="537" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Top 10"/>
+                                <connections>
+                                    <segue destination="lTe-sj-njm" kind="showDetail" identifier="topTenSegue" id="ouS-TG-As4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csT-LN-Wu3">
+                                <rect key="frame" x="148" y="461" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" identifier="gameSegue" popoverAnchorView="csT-LN-Wu3" id="d3A-tl-Z3F">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="07F-Ta-G0a"/>
                     </view>
+                    <connections>
+                        <outlet property="geniusLbl" destination="t2h-xL-8RM" id="ncI-vl-Z95"/>
+                        <outletCollection property="menuButtons" destination="csT-LN-Wu3" collectionClass="NSMutableArray" id="t6u-ps-cFh"/>
+                        <outletCollection property="menuButtons" destination="fwg-gp-jkf" collectionClass="NSMutableArray" id="vnS-5u-UhK"/>
+                        <outletCollection property="menuButtons" destination="CCh-Qe-Om4" collectionClass="NSMutableArray" id="9jn-eb-nra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hr-HF-ywm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-769" y="134"/>
+            <point key="canvasLocation" x="-1775" y="134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KAp-4c-yhA">
+            <objects>
+                <viewController id="lTe-sj-njm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AEy-iC-bzx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BUd-Bc-0aH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ni9-px-PUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-596" y="-287"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -138,6 +175,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Mc-o7-o1r">
+            <objects>
+                <viewController id="OSe-ah-6zB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7BM-gj-wnI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fys-8m-4Qg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bze-Fc-IzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-596" y="580"/>
         </scene>
     </scenes>
     <resources>

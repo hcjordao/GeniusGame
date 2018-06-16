@@ -45,7 +45,6 @@ class Genius {
     var playerProgress: Int = 0
     var score: Float
     var difficulty: Difficulty
-  
     
     init(difficulty: Difficulty){
         self.state = .showSequence
@@ -87,6 +86,10 @@ class Genius {
     func readyForInput() {
         playerProgress = 0
         state = .play
+    }
+    
+    func changeDifficulty(with difficulty: Difficulty){
+        self.difficulty = difficulty
     }
     
     func gameEnd(){
