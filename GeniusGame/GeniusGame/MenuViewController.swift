@@ -18,8 +18,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,7 +37,7 @@ class MenuViewController: UIViewController {
         self.view.createGradient(with: color0, and: color1)
         
         for button in menuButtons {
-            //Apply UI For All buttons.
+            button.setupMenuUI()
         }
         
         

@@ -15,6 +15,7 @@
 		AF5EC14920D5690B00FFF8E3 /* chicken.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF5EC14520D5690B00FFF8E3 /* chicken.mp3 */; };
 		AF5EC14A20D5690B00FFF8E3 /* omg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF5EC14620D5690B00FFF8E3 /* omg.mp3 */; };
 		AF5EC14C20D5693F00FFF8E3 /* SoundEffectPacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC14B20D5693F00FFF8E3 /* SoundEffectPacks.swift */; };
+		AF5EC14E20D5829400FFF8E3 /* UIButton_DesignExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */; };
 		AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C3F20D4307400F4C918 /* GradientView.swift */; };
 		AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C4120D43D1900F4C918 /* Genius.swift */; };
 		AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFBD2920D30E5D000620D3 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		AF5EC14520D5690B00FFF8E3 /* chicken.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chicken.mp3; sourceTree = "<group>"; };
 		AF5EC14620D5690B00FFF8E3 /* omg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = omg.mp3; sourceTree = "<group>"; };
 		AF5EC14B20D5693F00FFF8E3 /* SoundEffectPacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPacks.swift; sourceTree = "<group>"; };
+		AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_DesignExtension.swift; sourceTree = "<group>"; };
 		AFEC7C3F20D4307400F4C918 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AFEC7C4120D43D1900F4C918 /* Genius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genius.swift; sourceTree = "<group>"; };
 		AFFFBD2620D30E5D000620D3 /* GeniusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeniusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				AF5EC13D20D55D7000FFF8E3 /* UIView_GradientViewExtension.swift */,
+				AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				AF5EC13E20D55D7000FFF8E3 /* UIView_GradientViewExtension.swift in Sources */,
 				AF5EC13C20D55D5B00FFF8E3 /* MenuViewController.swift in Sources */,
 				AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */,
+				AF5EC14E20D5829400FFF8E3 /* UIButton_DesignExtension.swift in Sources */,
 				AF5EC14120D5629E00FFF8E3 /* Settings.swift in Sources */,
 				AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */,
 				AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */,

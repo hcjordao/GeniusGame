@@ -12,8 +12,7 @@ enum Difficulty: TimeInterval{
     case easy = 0.5
     case medium = 0.4
     case hard = 0.3
-    case extreme = 0.2
-    case insane = 0.1
+    case extreme = 0.1
     
     func difficultyMultiplier() -> Float {
         var multiplier: Float = 0
@@ -26,8 +25,6 @@ enum Difficulty: TimeInterval{
             multiplier = 1.5
         case .extreme:
             multiplier = 2
-        case .insane:
-            multiplier = 3
         }
         return multiplier
     }

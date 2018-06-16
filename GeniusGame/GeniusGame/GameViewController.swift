@@ -57,7 +57,7 @@ class GameViewController: UIViewController {
     }
     
     @objc func startGame() {
-        genius = Genius(difficulty: .insane)
+        genius = Genius(difficulty: .extreme)
         applyUserSettings()
         genius.extendSequence()
         showSequence()
