@@ -10,11 +10,13 @@ import UIKit
 import AVFoundation
 
 class GameViewController: UIViewController {
-    
-    //Properties
+   
+    //Outlets
+    @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var scoreLbl: UILabel!
     @IBOutlet var geniusButtons: [UIButton]!
 
+    //Properties
     var genius: Genius!
     var userSettings: Settings!
     var soundPlayer: AVAudioPlayer?
@@ -146,9 +148,11 @@ class GameViewController: UIViewController {
         //Adding Gradient View to View
         let color0 = UIColor(red:224.0/255, green:234.0/255, blue:252.0/255, alpha:1)
         let color1 = UIColor(red:207.0/255, green:222.0/255, blue:243.0/255, alpha:1)
-        self.view.createGradient(with: color0, and: color1)
+        view.createGradient(with: color0, and: color1)
         
         scoreLbl.text = "0"
+        
+        homeView.setupHomeView()
     }
 }
 

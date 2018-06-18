@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF5EC13C20D55D5B00FFF8E3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC13B20D55D5B00FFF8E3 /* MenuViewController.swift */; };
-		AF5EC13E20D55D7000FFF8E3 /* UIView_GradientViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC13D20D55D7000FFF8E3 /* UIView_GradientViewExtension.swift */; };
+		AF5EC13E20D55D7000FFF8E3 /* UIView_DesignExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC13D20D55D7000FFF8E3 /* UIView_DesignExtension.swift */; };
 		AF5EC14120D5629E00FFF8E3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC14020D5629E00FFF8E3 /* Settings.swift */; };
 		AF5EC14720D5690B00FFF8E3 /* nani.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF5EC14320D5690B00FFF8E3 /* nani.mp3 */; };
 		AF5EC14820D5690B00FFF8E3 /* baka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF5EC14420D5690B00FFF8E3 /* baka.mp3 */; };
@@ -16,18 +16,19 @@
 		AF5EC14A20D5690B00FFF8E3 /* omg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF5EC14620D5690B00FFF8E3 /* omg.mp3 */; };
 		AF5EC14C20D5693F00FFF8E3 /* SoundEffectPacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC14B20D5693F00FFF8E3 /* SoundEffectPacks.swift */; };
 		AF5EC14E20D5829400FFF8E3 /* UIButton_DesignExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */; };
+		AF5EC15220D5960200FFF8E3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC15120D5960200FFF8E3 /* SettingsViewController.swift */; };
+		AF5EC15420D59AC500FFF8E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5EC15320D59AC400FFF8E3 /* Assets.xcassets */; };
 		AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C3F20D4307400F4C918 /* GradientView.swift */; };
 		AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C4120D43D1900F4C918 /* Genius.swift */; };
 		AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFBD2920D30E5D000620D3 /* AppDelegate.swift */; };
 		AFFFBD2C20D30E5D000620D3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFBD2B20D30E5D000620D3 /* GameViewController.swift */; };
 		AFFFBD2F20D30E5D000620D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFFBD2D20D30E5D000620D3 /* Main.storyboard */; };
-		AFFFBD3120D30E5F000620D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFFFBD3020D30E5F000620D3 /* Assets.xcassets */; };
 		AFFFBD3420D30E5F000620D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFFBD3220D30E5F000620D3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF5EC13B20D55D5B00FFF8E3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		AF5EC13D20D55D7000FFF8E3 /* UIView_GradientViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_GradientViewExtension.swift; sourceTree = "<group>"; };
+		AF5EC13D20D55D7000FFF8E3 /* UIView_DesignExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_DesignExtension.swift; sourceTree = "<group>"; };
 		AF5EC14020D5629E00FFF8E3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AF5EC14320D5690B00FFF8E3 /* nani.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nani.mp3; sourceTree = "<group>"; };
 		AF5EC14420D5690B00FFF8E3 /* baka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = baka.mp3; sourceTree = "<group>"; };
@@ -35,13 +36,14 @@
 		AF5EC14620D5690B00FFF8E3 /* omg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = omg.mp3; sourceTree = "<group>"; };
 		AF5EC14B20D5693F00FFF8E3 /* SoundEffectPacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPacks.swift; sourceTree = "<group>"; };
 		AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_DesignExtension.swift; sourceTree = "<group>"; };
+		AF5EC15120D5960200FFF8E3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AF5EC15320D59AC400FFF8E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFEC7C3F20D4307400F4C918 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AFEC7C4120D43D1900F4C918 /* Genius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genius.swift; sourceTree = "<group>"; };
 		AFFFBD2620D30E5D000620D3 /* GeniusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeniusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFFBD2920D30E5D000620D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFFFBD2B20D30E5D000620D3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AFFFBD2E20D30E5D000620D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AFFFBD3020D30E5F000620D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFFFBD3320D30E5F000620D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFFFBD3520D30E5F000620D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +62,7 @@
 		AF5EC13F20D55DAC00FFF8E3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AF5EC13D20D55D7000FFF8E3 /* UIView_GradientViewExtension.swift */,
+				AF5EC13D20D55D7000FFF8E3 /* UIView_DesignExtension.swift */,
 				AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */,
 			);
 			path = Utils;
@@ -81,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				AFFFBD2D20D30E5D000620D3 /* Main.storyboard */,
-				AFFFBD3020D30E5F000620D3 /* Assets.xcassets */,
+				AF5EC15320D59AC400FFF8E3 /* Assets.xcassets */,
 				AFEC7C3F20D4307400F4C918 /* GradientView.swift */,
 			);
 			path = UI;
@@ -119,6 +121,7 @@
 				AFEC7C4320D4DB0C00F4C918 /* Model */,
 				AFFFBD2B20D30E5D000620D3 /* GameViewController.swift */,
 				AF5EC13B20D55D5B00FFF8E3 /* MenuViewController.swift */,
+				AF5EC15120D5960200FFF8E3 /* SettingsViewController.swift */,
 				AFEC7C3B20D3218A00F4C918 /* UI */,
 				AF5EC14220D568EC00FFF8E3 /* Sounds */,
 				AF5EC13F20D55DAC00FFF8E3 /* Utils */,
@@ -199,7 +202,7 @@
 				AF5EC14720D5690B00FFF8E3 /* nani.mp3 in Resources */,
 				AF5EC14820D5690B00FFF8E3 /* baka.mp3 in Resources */,
 				AFFFBD3420D30E5F000620D3 /* LaunchScreen.storyboard in Resources */,
-				AFFFBD3120D30E5F000620D3 /* Assets.xcassets in Resources */,
+				AF5EC15420D59AC500FFF8E3 /* Assets.xcassets in Resources */,
 				AF5EC14920D5690B00FFF8E3 /* chicken.mp3 in Resources */,
 				AFFFBD2F20D30E5D000620D3 /* Main.storyboard in Resources */,
 			);
@@ -214,7 +217,8 @@
 			files = (
 				AFFFBD2C20D30E5D000620D3 /* GameViewController.swift in Sources */,
 				AF5EC14C20D5693F00FFF8E3 /* SoundEffectPacks.swift in Sources */,
-				AF5EC13E20D55D7000FFF8E3 /* UIView_GradientViewExtension.swift in Sources */,
+				AF5EC13E20D55D7000FFF8E3 /* UIView_DesignExtension.swift in Sources */,
+				AF5EC15220D5960200FFF8E3 /* SettingsViewController.swift in Sources */,
 				AF5EC13C20D55D5B00FFF8E3 /* MenuViewController.swift in Sources */,
 				AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */,
 				AF5EC14E20D5829400FFF8E3 /* UIButton_DesignExtension.swift in Sources */,

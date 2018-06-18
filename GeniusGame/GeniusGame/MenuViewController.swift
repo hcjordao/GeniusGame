@@ -29,7 +29,7 @@ class MenuViewController: UIViewController {
             destinationVC.userSettings = userSettings
         }
     }
-
+    
     func setupUI(){
         //Adding Gradient View to View
         let color0 = UIColor(red:224.0/255, green:234.0/255, blue:252.0/255, alpha:1)
