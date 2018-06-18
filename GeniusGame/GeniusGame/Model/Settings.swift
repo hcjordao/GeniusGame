@@ -12,9 +12,8 @@ struct Settings {
     var volume: Float
     var difficulty: Difficulty
     var soundEffectPack: [String]
-    var isMuted: Bool
     
     static func `default`() -> Settings{
-        return Settings(volume: 1, difficulty: .easy, soundEffectPack: SoundEffectPacks.packOne, isMuted: false)
+        return Settings(volume: 0.5, difficulty: .extreme, soundEffectPack: SoundEffectPacks.packOne)
     }
 }

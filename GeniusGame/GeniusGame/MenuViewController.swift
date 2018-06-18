@@ -27,6 +27,16 @@ class MenuViewController: UIViewController {
             //Sending info from this VC to the next VC
             let destinationVC = segue.destination as! GameViewController
             destinationVC.userSettings = userSettings
+        } else if segue.identifier == "settingsSegue" {
+            let destinationVC = segue.destination as! SettingsViewController
+            destinationVC.userSettings = userSettings
+        }
+    }
+    
+    @IBAction func unwindFromSegue(_ sender: UIStoryboardSegue){
+        if sender.source is SettingsViewController {
+            let sourceVC = sender.source as! SettingsViewController
+            userSettings = sourceVC.userSettings
         }
     }
     

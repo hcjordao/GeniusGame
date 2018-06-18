@@ -15,4 +15,18 @@ extension UIButton {
         self.layer.cornerRadius = 15
         self.layer.borderColor = UIColor.white.cgColor
     }
+    
+    func highlightButton(){
+        self.backgroundColor = .clear
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 3
+        self.layer.cornerRadius = 15
+    }
+    
+    func unhiglightButton(){
+        self.backgroundColor = .clear
+        self.layer.borderColor = UIColor.clear.cgColor
+        self.layer.borderWidth = 3
+        self.layer.cornerRadius = 15
+    }
 }

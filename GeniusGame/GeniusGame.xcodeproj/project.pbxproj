@@ -18,6 +18,7 @@
 		AF5EC14E20D5829400FFF8E3 /* UIButton_DesignExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */; };
 		AF5EC15220D5960200FFF8E3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC15120D5960200FFF8E3 /* SettingsViewController.swift */; };
 		AF5EC15420D59AC500FFF8E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5EC15320D59AC400FFF8E3 /* Assets.xcassets */; };
+		AF75738C20D82B6900713C5A /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75738B20D82B6900713C5A /* Float+Extensions.swift */; };
 		AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C3F20D4307400F4C918 /* GradientView.swift */; };
 		AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C4120D43D1900F4C918 /* Genius.swift */; };
 		AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFBD2920D30E5D000620D3 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 		AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_DesignExtension.swift; sourceTree = "<group>"; };
 		AF5EC15120D5960200FFF8E3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AF5EC15320D59AC400FFF8E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF75738B20D82B6900713C5A /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
 		AFEC7C3F20D4307400F4C918 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AFEC7C4120D43D1900F4C918 /* Genius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genius.swift; sourceTree = "<group>"; };
 		AFFFBD2620D30E5D000620D3 /* GeniusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeniusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 			children = (
 				AF5EC13D20D55D7000FFF8E3 /* UIView_DesignExtension.swift */,
 				AF5EC14D20D5829400FFF8E3 /* UIButton_DesignExtension.swift */,
+				AF75738B20D82B6900713C5A /* Float+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */,
 				AF5EC14E20D5829400FFF8E3 /* UIButton_DesignExtension.swift in Sources */,
 				AF5EC14120D5629E00FFF8E3 /* Settings.swift in Sources */,
+				AF75738C20D82B6900713C5A /* Float+Extensions.swift in Sources */,
 				AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */,
 				AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */,
 			);
