@@ -13,9 +13,6 @@ class MenuViewController: UIViewController {
     @IBOutlet var menuButtons: [UIButton]!
     @IBOutlet weak var geniusLbl: UILabel!
     
-    //First Load of the game is equal to a default settings
-    var userSettings: Settings = Settings.default()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -23,20 +20,16 @@ class MenuViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //If segue is going to the game
-        if segue.identifier == "gameSegue" {
-            //Sending info from this VC to the next VC
-            let destinationVC = segue.destination as! GameViewController
-            destinationVC.userSettings = userSettings
-        } else if segue.identifier == "settingsSegue" {
+        if segue.identifier == "settingsSegue" {
             let destinationVC = segue.destination as! SettingsViewController
-            destinationVC.userSettings = userSettings
+            destinationVC.userSettings = DataManager.shared().userSettings
         }
     }
     
     @IBAction func unwindFromSegue(_ sender: UIStoryboardSegue){
         if sender.source is SettingsViewController {
             let sourceVC = sender.source as! SettingsViewController
-            userSettings = sourceVC.userSettings
+            DataManager.shared().update(newSettings: sourceVC.userSettings)
         }
     }
     
@@ -49,7 +42,5 @@ class MenuViewController: UIViewController {
         for button in menuButtons {
             button.setupMenuUI()
         }
-        
-        
     }
 }

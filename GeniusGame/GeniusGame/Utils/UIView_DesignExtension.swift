@@ -17,7 +17,7 @@ extension UIView {
         self.insertSubview(gradientView, at: 0)
     }
     
-    func setupHomeView(){
+    func setupView(){
         self.backgroundColor = .black
         self.layer.cornerRadius = 15
         self.layer.borderColor = UIColor.white.cgColor

@@ -12,31 +12,22 @@ import AVFoundation
 class GameViewController: UIViewController {
    
     //Outlets
+    @IBOutlet weak var instructionLbl: UILabel!
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var scoreLbl: UILabel!
     @IBOutlet var geniusButtons: [UIButton]!
 
     //Properties
     var genius: Genius!
-    var userSettings: Settings!
     var soundPlayer: AVAudioPlayer?
+    var tapView: UIView!
+    var userSettings: Settings {
+        return DataManager.shared().userSettings
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        test()
-    }
-    
-    func test() -> Void {
-        let rect = CGRect(x: 50, y: 50, width: 50, height: 50)
-        let view1 = UIView(frame: rect)
-        view1.backgroundColor = UIColor.black
-        self.view.addSubview(view1)
-        let tap = UITapGestureRecognizer()
-        tap.numberOfTapsRequired = 1
-        tap.numberOfTouchesRequired = 1
-        tap.addTarget(self, action: #selector(GameViewController.startGame))
-        view1.addGestureRecognizer(tap)
+        setup()
     }
     
     @IBAction func touchButton(_ sender: UIButton){
@@ -51,6 +42,7 @@ class GameViewController: UIViewController {
             }else if genius.state == .end {
                 //Finish the game UI Updates
                 displayScore()
+                gameEnded()
             } else {
                 //Keep playing the game.
                 playSound(of: index)
@@ -59,10 +51,25 @@ class GameViewController: UIViewController {
     }
     
     @objc func startGame() {
+        tapView.isHidden = true
+        sendInstruction(with: "Pay Attention...")
         genius = Genius(difficulty: .extreme)
         applyUserSettings()
         genius.extendSequence()
         showSequence()
+    }
+    
+    func gameEnded(){
+        performSegue(withIdentifier: "gameEndedSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! GameOverViewController
+        destinationVC.player = genius.player
+    }
+    
+    func sendInstruction(with message: String){
+        self.instructionLbl.text = message
     }
     
     func applyUserSettings(){
@@ -76,6 +83,7 @@ class GameViewController: UIViewController {
     
     func showSequence(){
         changeButtonInteraction(to: false)
+        sendInstruction(with: "Pay Attention...")
         genius.sequenceCount = 0
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (_) in
             self.highlightNextButton()
@@ -135,6 +143,7 @@ class GameViewController: UIViewController {
             return
         }
         changeButtonInteraction(to: true)
+        sendInstruction(with: "Your Turn...")
         genius.readyForInput()
     }
     
@@ -144,7 +153,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func setupUI(){
+    func setup(){
         //Adding Gradient View to View
         let color0 = UIColor(red:224.0/255, green:234.0/255, blue:252.0/255, alpha:1)
         let color1 = UIColor(red:207.0/255, green:222.0/255, blue:243.0/255, alpha:1)
@@ -152,7 +161,16 @@ class GameViewController: UIViewController {
         
         scoreLbl.text = "0"
         
-        homeView.setupHomeView()
+        homeView.setupView()
+
+        self.tapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: homeView.frame.origin.y))
+        self.view.insertSubview(tapView, at: 10)
+        
+        let tap = UITapGestureRecognizer()
+        tap.numberOfTapsRequired = 1
+        tap.numberOfTouchesRequired = 1
+        tap.addTarget(self, action: #selector(GameViewController.startGame))
+        tapView.addGestureRecognizer(tap)
     }
 }
 

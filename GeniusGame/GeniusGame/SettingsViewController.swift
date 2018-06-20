@@ -68,7 +68,7 @@ class SettingsViewController: UIViewController {
         let color1 = UIColor(red:207.0/255, green:222.0/255, blue:243.0/255, alpha:1)
         self.view.createGradient(with: color0, and: color1)
         
-        homeView.setupHomeView()
+        homeView.setupView()
         
         loadSettingsUI()
     }

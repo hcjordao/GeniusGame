@@ -19,6 +19,9 @@
 		AF5EC15220D5960200FFF8E3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EC15120D5960200FFF8E3 /* SettingsViewController.swift */; };
 		AF5EC15420D59AC500FFF8E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5EC15320D59AC400FFF8E3 /* Assets.xcassets */; };
 		AF75738C20D82B6900713C5A /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75738B20D82B6900713C5A /* Float+Extensions.swift */; };
+		AF75738E20D96FBA00713C5A /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75738D20D96FBA00713C5A /* GameOverViewController.swift */; };
+		AF75739020D974B600713C5A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75738F20D974B600713C5A /* DataManager.swift */; };
+		AFA9163020DA148100F9B9F7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA9162F20DA148100F9B9F7 /* Player.swift */; };
 		AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C3F20D4307400F4C918 /* GradientView.swift */; };
 		AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEC7C4120D43D1900F4C918 /* Genius.swift */; };
 		AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFBD2920D30E5D000620D3 /* AppDelegate.swift */; };
@@ -40,6 +43,9 @@
 		AF5EC15120D5960200FFF8E3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AF5EC15320D59AC400FFF8E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF75738B20D82B6900713C5A /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
+		AF75738D20D96FBA00713C5A /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		AF75738F20D974B600713C5A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		AFA9162F20DA148100F9B9F7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		AFEC7C3F20D4307400F4C918 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AFEC7C4120D43D1900F4C918 /* Genius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genius.swift; sourceTree = "<group>"; };
 		AFFFBD2620D30E5D000620D3 /* GeniusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeniusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,9 +101,11 @@
 		AFEC7C4320D4DB0C00F4C918 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF75738F20D974B600713C5A /* DataManager.swift */,
 				AFEC7C4120D43D1900F4C918 /* Genius.swift */,
 				AF5EC14020D5629E00FFF8E3 /* Settings.swift */,
 				AF5EC14B20D5693F00FFF8E3 /* SoundEffectPacks.swift */,
+				AFA9162F20DA148100F9B9F7 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 			children = (
 				AFEC7C4320D4DB0C00F4C918 /* Model */,
 				AFFFBD2B20D30E5D000620D3 /* GameViewController.swift */,
+				AF75738D20D96FBA00713C5A /* GameOverViewController.swift */,
 				AF5EC13B20D55D5B00FFF8E3 /* MenuViewController.swift */,
 				AF5EC15120D5960200FFF8E3 /* SettingsViewController.swift */,
 				AFEC7C3B20D3218A00F4C918 /* UI */,
@@ -222,12 +231,15 @@
 				AF5EC14C20D5693F00FFF8E3 /* SoundEffectPacks.swift in Sources */,
 				AF5EC13E20D55D7000FFF8E3 /* UIView_DesignExtension.swift in Sources */,
 				AF5EC15220D5960200FFF8E3 /* SettingsViewController.swift in Sources */,
+				AFA9163020DA148100F9B9F7 /* Player.swift in Sources */,
 				AF5EC13C20D55D5B00FFF8E3 /* MenuViewController.swift in Sources */,
 				AFEC7C4020D4307400F4C918 /* GradientView.swift in Sources */,
 				AF5EC14E20D5829400FFF8E3 /* UIButton_DesignExtension.swift in Sources */,
 				AF5EC14120D5629E00FFF8E3 /* Settings.swift in Sources */,
+				AF75738E20D96FBA00713C5A /* GameOverViewController.swift in Sources */,
 				AF75738C20D82B6900713C5A /* Float+Extensions.swift in Sources */,
 				AFEC7C4220D43D1900F4C918 /* Genius.swift in Sources */,
+				AF75739020D974B600713C5A /* DataManager.swift in Sources */,
 				AFFFBD2A20D30E5D000620D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

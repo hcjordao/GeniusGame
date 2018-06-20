@@ -28,10 +28,42 @@ enum Difficulty: TimeInterval{
         }
         return multiplier
     }
+    
+    func getDifficultyName() -> String{
+        var name: String
+        switch self {
+        case .easy:
+            name = "easy"
+        case .medium:
+            name = "medium"
+        case .hard:
+            name = "hard"
+        case .extreme:
+            name = "extreme"
+        }
+        return name
+    }
+    
+    static func getDifficultyFromName(name: String) -> Difficulty {
+        var difficulty: Difficulty = .easy
+        switch name {
+        case "easy":
+            difficulty = .easy
+        case "medium":
+            difficulty = .medium
+        case "hard":
+            difficulty = .hard
+        case "extreme":
+            difficulty = .extreme
+        default:
+            break
+        }
+        return difficulty
+    }
 }
 
 enum GameState{
-    case pause,play,showSequence,end
+    case play,showSequence,end
 }
 
 class Genius {
@@ -43,12 +75,14 @@ class Genius {
     var score: Float
     var difficulty: Difficulty
     var soundEffects: [String]
+    var player: Player
     
     init(difficulty: Difficulty){
         self.state = .showSequence
         self.difficulty = difficulty
         self.soundEffects = []
         self.score = 0
+        self.player = Player()
     }
     
     func checkInput(with value: Int) {
@@ -62,10 +96,6 @@ class Genius {
         } else {
             gameEnd()
         }
-    }
-    
-    func playSound(of index: Int){
-        
     }
     
     func extendSequence(){
@@ -96,6 +126,8 @@ class Genius {
     }
     
     func gameEnd(){
+        state = .end
+        player.score = score
         score = 0
         playerProgress = 0
         print("End")
