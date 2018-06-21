@@ -12,6 +12,7 @@ import AVFoundation
 class GameViewController: UIViewController {
    
     //Outlets
+    @IBOutlet weak var bestPlayerScoreLbl: UILabel!
     @IBOutlet weak var instructionLbl: UILabel!
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var scoreLbl: UILabel!
@@ -34,17 +35,15 @@ class GameViewController: UIViewController {
         if let index = geniusButtons.index(of: sender){
             genius.checkInput(with: index)
             if genius.state == .showSequence {
-                //Increment score label
+                //Show Extended Sequence To Player.
                 displayScore()
                 playSound(of: index)
-                //Extending pattern UI update
-                self.showSequence()
+                showSequence()
             }else if genius.state == .end {
-                //Finish the game UI Updates
                 displayScore()
                 gameEnded()
             } else {
-                //Keep playing the game.
+                //Regular Player Move.
                 playSound(of: index)
             }
         }
@@ -60,12 +59,14 @@ class GameViewController: UIViewController {
     }
     
     func gameEnded(){
-        performSegue(withIdentifier: "gameEndedSegue", sender: nil)
+        performSegue(withIdentifier: "gameOverSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! GameOverViewController
-        destinationVC.player = genius.player
+        if segue.identifier == "gameOverSegue" {
+            let destinationVC = segue.destination as! GameOverViewController
+            destinationVC.player = genius.player
+        }
     }
     
     func sendInstruction(with message: String){
@@ -153,8 +154,26 @@ class GameViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindFromGameOver(_ sender: UIStoryboardSegue){
+        if sender.source is GameOverViewController {
+            self.tapView.isHidden = false
+            loadBestPlayerScore()
+            sendInstruction(with: "Tap to play...")
+        }
+    }
+    
+    func loadBestPlayerScore(){
+        let players = DataManager.shared().topTen
+        var scoreText: String
+        if !players.isEmpty{
+            scoreText = "\(Int(players[0].score))"
+        } else {
+            scoreText = "0"
+        }
+        self.bestPlayerScoreLbl.text = "BEST: " + scoreText
+    }
+    
     func setup(){
-        //Adding Gradient View to View
         let color0 = UIColor(red:224.0/255, green:234.0/255, blue:252.0/255, alpha:1)
         let color1 = UIColor(red:207.0/255, green:222.0/255, blue:243.0/255, alpha:1)
         view.createGradient(with: color0, and: color1)
@@ -162,6 +181,8 @@ class GameViewController: UIViewController {
         scoreLbl.text = "0"
         
         homeView.setupView()
+        
+        loadBestPlayerScore()
 
         self.tapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: homeView.frame.origin.y))
         self.view.insertSubview(tapView, at: 10)

@@ -30,6 +30,7 @@ class DataManager {
     func fetchDataFromUserDefaults(){
         unarchiveSettings()
         unarchiveTopTen()
+        resetUser()
     }
     
     func update(newSettings: Settings) {
@@ -41,11 +42,16 @@ class DataManager {
         if topTen.isEmpty {
             topTen.append(newPlayer)
         } else {
-            for i in self.topTen.indices{
-                if newPlayer.score > topTen[i].score{
-                    self.topTen.insert(newPlayer, at: i)
-                    if topTen.count == 11 {
-                        topTen.removeLast()
+            if topTen.count < 10 {
+                for i in self.topTen.indices{
+                    if newPlayer.score > topTen[i].score{
+                        self.topTen.insert(newPlayer, at: i)
+                        if topTen.count > 10{
+                            topTen.removeLast()
+                        }
+                        break
+                    } else if topTen[i] == topTen.last {
+                        topTen.append(newPlayer)
                     }
                 }
             }
@@ -77,13 +83,5 @@ class DataManager {
         let userDefaults = UserDefaults.standard
         let decoded = userDefaults.object(forKey: "topTen") as? Data ?? Data()
         DataManager.shared().topTen = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [Player] ?? []
-    }
-    
-    func resetUser(){
-        let defaults = UserDefaults.standard
-        let dictionary = defaults.dictionaryRepresentation()
-        dictionary.keys.forEach { key in
-            defaults.removeObject(forKey: key)
-        }
     }
 }

@@ -21,13 +21,12 @@ class GameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        //playerDidEnterTopTen()
     }
     
     func playerDidEnterTopTen() -> Bool{
         let currentTopTen = DataManager.shared().topTen
         
-        if currentTopTen.isEmpty {
+        if currentTopTen.isEmpty || currentTopTen.count < 10 {
             return true
         }
         
@@ -42,6 +41,20 @@ class GameOverViewController: UIViewController {
     
     @objc func viewTapped(){
         self.view.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if playerDidEnterTopTen()  {
+            DataManager.shared().update(newPlayer: player)
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if self.nameTexfield.isEmpty() && self.nameTexfield.isHidden == false {
+            self.nameTexfield.shake()
+            return false
+        }
+        return true
     }
     
     func setup(){
@@ -82,3 +95,4 @@ extension GameOverViewController: UITextFieldDelegate{
         return true
     }
 }
+

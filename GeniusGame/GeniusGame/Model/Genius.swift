@@ -88,7 +88,6 @@ class Genius {
     func checkInput(with value: Int) {
         if value == sequence[playerProgress] {
             playerProgress += 1
-            //Play Sound
             if playerProgress == sequence.count {
                 playerScored()
                 extendSequence()
@@ -99,7 +98,6 @@ class Genius {
     }
     
     func extendSequence(){
-        //Increase pattern if player succeded in completing previous pattern
         let randomChoice = Int(arc4random_uniform(4))
         sequence.append(randomChoice)
         
@@ -118,6 +116,7 @@ class Genius {
     }
     
     func changeDifficulty(with difficulty: Difficulty){
+        self.player.difficultyPlayed = difficulty.getDifficultyName()
         self.difficulty = difficulty
     }
     
@@ -130,6 +129,5 @@ class Genius {
         player.score = score
         score = 0
         playerProgress = 0
-        print("End")
     }
 }

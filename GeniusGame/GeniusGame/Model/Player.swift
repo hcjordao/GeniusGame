@@ -11,22 +11,25 @@ import Foundation
 class Player: NSObject, NSCoding {
 
     var name: String
+    var difficultyPlayed: String
     var score: Float
     
-    init(name: String = "", score: Float = 0) {
+    init(name: String = "", difficultyPlayed: String = "easy",score: Float = 0) {
         self.name = name
+        self.difficultyPlayed = difficultyPlayed
         self.score = score
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: "name") as! String
-        let score = aDecoder.decodeObject(forKey: "score") as! Float
-    
-        self.init(name: name, score: score)
+        let score = aDecoder.decodeFloat(forKey: "score")
+        let difficultyPlayed = aDecoder.decodeObject(forKey: "difficultyPlayed") as! String
+        self.init(name: name, difficultyPlayed: difficultyPlayed, score: score)
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.name, forKey: "name")
         aCoder.encode(self.score, forKey: "score")
+        aCoder.encode(self.difficultyPlayed, forKey: "difficultyPlayed")
     }
 }

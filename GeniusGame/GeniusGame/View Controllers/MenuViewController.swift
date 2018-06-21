@@ -15,11 +15,10 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setup()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //If segue is going to the game
         if segue.identifier == "settingsSegue" {
             let destinationVC = segue.destination as! SettingsViewController
             destinationVC.userSettings = DataManager.shared().userSettings
@@ -33,8 +32,7 @@ class MenuViewController: UIViewController {
         }
     }
     
-    func setupUI(){
-        //Adding Gradient View to View
+    func setup(){
         let color0 = UIColor(red:224.0/255, green:234.0/255, blue:252.0/255, alpha:1)
         let color1 = UIColor(red:207.0/255, green:222.0/255, blue:243.0/255, alpha:1)
         self.view.createGradient(with: color0, and: color1)

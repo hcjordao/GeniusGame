@@ -44,7 +44,7 @@ class SettingsViewController: UIViewController {
             default:
                 packButtons[1].highlightButton()
                 packButtons[0].unhiglightButton()
-                userSettings.soundEffectPack = SoundEffectPacks.packOne
+                userSettings.soundEffectPack = SoundEffectPacks.packTwo
             }
         }
     }

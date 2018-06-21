@@ -9,6 +9,6 @@
 import Foundation
 
 struct SoundEffectPacks {
-    static var packOne: [String] = ["baka","chicken","nani","omg"]
-    static var packTwo: [String] = ["baka","chicken","nani","omg"]
+    static var packOne: [String] = ["simonSound1","simonSound2","simonSound3","simonSound4"]
+    static var packTwo: [String] = ["sound1","sound2","sound3","sound4"]
 }

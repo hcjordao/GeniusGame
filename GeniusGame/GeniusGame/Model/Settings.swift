@@ -8,16 +8,6 @@
 
 import Foundation
 
-//struct Settings: NSObject, NSCoding {
-//    var volume: Float
-//    var difficulty: Difficulty
-//    var soundEffectPack: [String]
-//
-//    static func `default`() -> Settings{
-//        return Settings(volume: 0.5, difficulty: .extreme, soundEffectPack: SoundEffectPacks.packOne)
-//    }
-//}
-
 class Settings: NSObject, NSCoding{
     
     var volume: Float
