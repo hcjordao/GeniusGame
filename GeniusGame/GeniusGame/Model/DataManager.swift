@@ -30,7 +30,6 @@ class DataManager {
     func fetchDataFromUserDefaults(){
         unarchiveSettings()
         unarchiveTopTen()
-        resetUser()
     }
     
     func update(newSettings: Settings) {
