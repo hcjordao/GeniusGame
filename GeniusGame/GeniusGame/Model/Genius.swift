@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum GameState{
+    case play,showSequence,end
+}
+
 enum Difficulty: TimeInterval{
     case easy = 0.5
     case medium = 0.4
@@ -62,10 +66,6 @@ enum Difficulty: TimeInterval{
     }
 }
 
-enum GameState{
-    case play,showSequence,end
-}
-
 class Genius {
     
     var state: GameState
@@ -100,8 +100,6 @@ class Genius {
     func extendSequence(){
         let randomChoice = Int(arc4random_uniform(4))
         sequence.append(randomChoice)
-        
-        print(sequence)
         state = .showSequence
     }
     
